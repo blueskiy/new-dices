@@ -1,27 +1,35 @@
-import profileImg from './img/profile-icon.png';
+// import profileImg from './img/profile-icon.svg';
+import profileImg from './img/priest.svg';
 import arrow from './img/arrow.png';
 import './App.css';
 
 function App() {
+
+  const dices =  [{
+    "name": "Cleiton",
+    "dices": [
+        {
+          "diceType":"D6",
+          "value": 4
+      },
+        {
+          "diceType":"D6",
+          "value": 6
+      },
+    ],
+    "modifier": 8,
+    "result": 10
+  }]
+
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
         <div className="menu-hamburguer"></div>
         <span className="profile-box">
-          Meu Perfil
-          <img className="avatar" src={profileImg} alt="avatar"/>
+          <span>Meu Perfil</span>
+          <div className="avatar-wrapper">
+            <img className="avatar" src={profileImg} alt="avatar"/>
+          </div>
         </span>
       </header>
 
@@ -33,15 +41,21 @@ function App() {
       
       <div id="results-list">
         <div className="individual-result">
-          <img src={profileImg} alt="avatar"/>
+          <div className="svg-wrapper">
+            <img src={profileImg} alt="avatar"/>
+          </div>
           <div className="roll-result"></div>
         </div>
         <div className="individual-result">
-          <img src={profileImg} alt="avatar"/>
+          <div className="svg-wrapper">
+            <img src={profileImg} alt="avatar"/>
+          </div>
           <div className="roll-result"></div>
         </div>
         <div className="individual-result">
-          <img className="result-avatar" src={profileImg} alt="avatar"/>
+          <div className="result-avatar">
+            <img src={profileImg} alt="avatar"/>
+          </div>
           <div className="roll-result"></div>
         </div>
       </div>
@@ -53,6 +67,8 @@ function App() {
       <div id="toggle-dices-box-button">
         <img src={arrow} alt=""/>
       </div>
+
+      <div id="dices-box"></div>
 
     </div>
   );
